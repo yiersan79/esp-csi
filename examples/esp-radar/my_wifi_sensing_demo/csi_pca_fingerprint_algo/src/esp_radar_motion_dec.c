@@ -17,14 +17,11 @@
 #include <math.h>           /* fabsf / sqrtf / powf */
 #include <stdlib.h>         /* malloc / free（组件独立，不再用 RADAR_MALLOC_RETRY 宏） */
 
-#include "esp_log.h"        /* 日志 */
 #include "esp_err.h"        /* esp_err_t / ESP_OK / ESP_FAIL */
 #include "esp_radar_motion_dec.h"   /* 本组件 API 声明 */
 
 #define ITRS_MAX     30     /* 幂法最大迭代次数（防不收敛死循环） */
 #define PRECISION    0.0001 /* 幂法收敛阈值：相邻两次特征值差小于此即认为收敛 */
-
-static const char *TAG = "motion_dec_local";    /* 日志标签（当前未用，保留调试入口） */
 
 /**
  * Pearson 相关系数（组件内私有版本，等价于 old_utils.c 的 corr()）

@@ -1,0 +1,7 @@
+## Local open-source stand-in for espressif/esp_radar_motion_dec.
+## The directory name is the component name. With a version set, the
+## component manager uses this tree instead of the registry prebuilt .a.
+version: 0.1.1
+description: Open-source PCA fingerprint implementation of esp_radar_motion_dec
+dependencies:
+  idf: '>=5.4'
